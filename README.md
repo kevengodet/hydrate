@@ -1,11 +1,11 @@
-# keven/import-properties
+# keven/hydrate
 
-Import an array of parameters into an object properties.
+Hydrate an object from an array of properties.
 
 ## Install
 
 ```shell
-$ composer install keven/import-properties
+$ composer install keven/hydrate
 ```
 
 ## Usage
@@ -15,8 +15,8 @@ $ composer install keven/import-properties
 
 // PHP 5.6+
 
-use function Keven\import_properties;
-import_properties(['foo' => 'bar'], $myObject);
+use function Keven\hydrate;
+hydrate(['foo' => 'bar'], $myObject);
 echo $myObject; // "bar"
 
 class Foo
@@ -24,7 +24,7 @@ class Foo
     private $bar;
     public function __construct($args)
     {
-        import_properties($args);
+        hydrate($args);
     }
     public funnction getBar()
     {
@@ -36,7 +36,7 @@ echo $foo->getBar(); // "baz"
 
 // PHP 5.3-5.5
 
-\Keven\import_properties(array('foo' => 'bar'), $myObject);
+\Keven\hydrate(array('foo' => 'bar'), $myObject);
 echo $myObject; // "bar"
 
 $foo = new Foo(array('bar' => 'baz'));

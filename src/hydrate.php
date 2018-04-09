@@ -3,7 +3,7 @@
 namespace Keven;
 
 /**
- * Import an array of values into an object properties
+ * Hydrate an object from an array of properties
  *
  * Usage:
  *
@@ -13,7 +13,7 @@ namespace Keven;
  * @param object $object
  * @throws \BadFunctionCallException
  */
-function import_properties(array $properties, $object = null)
+function hydrate(array $properties, $object = null)
 {
     if (is_null($object)) {
         $trace = debug_backtrace();

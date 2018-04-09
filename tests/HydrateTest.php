@@ -2,45 +2,45 @@
 
 namespace Keven\Tests;
 
-class ImportPropertiesTest extends \PHPUnit\Framework\TestCase
+class HydrateTest extends \PHPUnit\Framework\TestCase
 {
     /** @expectedException \BadFunctionCallException */
     function testNotObject()
     {
-        \Keven\import_properties(array(), '');
+        \Keven\hydrate(array(), '');
     }
 
     function testUnchangedObject()
     {
-        \Keven\import_properties(array(), $o = new \stdClass);
+        \Keven\hydrate(array(), $o = new \stdClass);
 
         $this->assertEquals(new \stdClass, $o);
     }
 
     function testUndeclaredOnObject()
     {
-        \Keven\import_properties(array('foo' => 'bar'), $o = new \stdClass);
+        \Keven\hydrate(array('foo' => 'bar'), $o = new \stdClass);
 
         $this->assertEquals('bar', $o->foo);
     }
 
     function testPublicOnObject()
     {
-        \Keven\import_properties(array('bar' => 'baz'), $o = new FooPublic);
+        \Keven\hydrate(array('bar' => 'baz'), $o = new FooPublic);
 
         $this->assertEquals('baz', $o->bar());
     }
 
     function testProtectedOnObject()
     {
-        \Keven\import_properties(array('bar' => 'baz'), $o = new FooProtected);
+        \Keven\hydrate(array('bar' => 'baz'), $o = new FooProtected);
 
         $this->assertEquals('baz', $o->bar());
     }
 
     function testPrivateOnObject()
     {
-        \Keven\import_properties(array('bar' => 'baz'), $o = new FooPrivate);
+        \Keven\hydrate(array('bar' => 'baz'), $o = new FooPrivate);
 
         $this->assertEquals('baz', $o->bar());
     }
@@ -48,7 +48,7 @@ class ImportPropertiesTest extends \PHPUnit\Framework\TestCase
     function testUnchangedThis()
     {
         $o = new FooPublic;
-        $o->import(array());
+        $o->hydrate(array());
 
         $this->assertEquals(new FooPublic, $o);
     }
@@ -56,7 +56,7 @@ class ImportPropertiesTest extends \PHPUnit\Framework\TestCase
     function testUndeclaredOnThis()
     {
         $o = new FooPublic;
-        $o->import(array('foo' => 'bar'));
+        $o->hydrate(array('foo' => 'bar'));
 
         $this->assertEquals('bar', $o->foo);
     }
@@ -64,7 +64,7 @@ class ImportPropertiesTest extends \PHPUnit\Framework\TestCase
     function testPublicOnThis()
     {
         $o = new FooPublic;
-        $o->import(array('bar' => 'baz'));
+        $o->hydrate(array('bar' => 'baz'));
 
         $this->assertEquals('baz', $o->bar());
     }
@@ -72,7 +72,7 @@ class ImportPropertiesTest extends \PHPUnit\Framework\TestCase
     function testProtectedOnThis()
     {
         $o = new FooProtected;
-        $o->import(array('bar' => 'baz'));
+        $o->hydrate(array('bar' => 'baz'));
 
         $this->assertEquals('baz', $o->bar());
     }
@@ -80,7 +80,7 @@ class ImportPropertiesTest extends \PHPUnit\Framework\TestCase
     function testPrivateOnThis()
     {
         $o = new FooPrivate;
-        $o->import(array('bar' => 'baz'));
+        $o->hydrate(array('bar' => 'baz'));
 
         $this->assertEquals('baz', $o->bar());
     }
@@ -89,20 +89,20 @@ class ImportPropertiesTest extends \PHPUnit\Framework\TestCase
 class FooPublic
 {
     public $bar;
-    function import($p) { \Keven\import_properties($p); }
+    function hydrate($p) { \Keven\hydrate($p); }
     function bar() { return $this->bar; }
 }
 
 class FooProtected
 {
     protected $bar;
-    function import($p) { \Keven\import_properties($p); }
+    function hydrate($p) { \Keven\hydrate($p); }
     function bar() { return $this->bar; }
 }
 
 class FooPrivate
 {
     private $bar;
-    function import($p) { \Keven\import_properties($p); }
+    function hydrate($p) { \Keven\hydrate($p); }
     function bar() { return $this->bar; }
 }

@@ -1,6 +1,6 @@
 {
-    "name": "keven/import-properties",
-    "description": "Import an array of parameters into an object properties.",
+    "name": "keven/hydrate",
+    "description": "Hydrate an object from an array of properties.",
     "license": "mit",
     "type": "library",
     "authors": [
@@ -12,7 +12,7 @@
         }
     ],
     "autoload": {
-        "files": [ "src/import_properties.php" ]
+        "files": [ "src/hydrate.php" ]
     },
     "require": {
         "phpunit/phpunit": "^7.1"
