@@ -1,0 +1,20 @@
+{
+    "name": "keven/import-properties",
+    "description": "Import an array of parameters into an object properties.",
+    "license": "mit",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Keven Godet",
+            "email": "contact@keven.fr",
+            "homepage": "http://keven.fr",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "files": [ "src/import_properties.php" ]
+    },
+    "require": {
+        "phpunit/phpunit": "^7.1"
+    }
+}
