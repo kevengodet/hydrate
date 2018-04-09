@@ -10,35 +10,50 @@ $ composer install keven/hydrate
 
 ## Usage
 
+Hydrate a given object:
+
 ```php
 <?php
 
-// PHP 5.6+
+$obj = new stdClass;
+\Keven\hydrate(array('foo' => 'bar'), $obj);
+echo $obj->foo; // "bar"
+```
 
-use function Keven\hydrate;
-hydrate(['foo' => 'bar'], $myObject);
-echo $myObject; // "bar"
+Hydrate from `$this` (you don't have to pass the object parameter):
 
-class Foo
+```php
+<?php
+
+$car = new Car(array(
+    'engine' => 'V8',
+    'color'  => 'red',
+    'brand'  => 'Chevrolet',
+));
+echo $car->getColor(); // "red"
+
+class Car
 {
-    private $bar;
+    private $engine, $color, $brand;
+
     public function __construct($args)
     {
         hydrate($args);
     }
-    public funnction getBar()
+
+    public function getEngine()
     {
-        return $this->bar;
+        return $this->engine;
+    }
+
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    public function getBrand()
+    {
+        return $this->brand;
     }
 }
-$foo = new Foo(['bar' => 'baz']);
-echo $foo->getBar(); // "baz"
-
-// PHP 5.3-5.5
-
-\Keven\hydrate(array('foo' => 'bar'), $myObject);
-echo $myObject; // "bar"
-
-$foo = new Foo(array('bar' => 'baz'));
-echo $foo->getBar(); // "baz"
 ```
