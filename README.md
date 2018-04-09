@@ -1,5 +1,7 @@
 # keven/hydrate
 
+[![Build Status](https://travis-ci.org/kevengodet/hydrate.svg)](https://travis-ci.org/kevengodet/hydrate)
+
 Hydrate an object from an array of properties.
 
 ## Install
