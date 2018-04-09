@@ -1,6 +1,6 @@
 # keven/hydrate
 
-[![Latest Stable Version](https://poser.pugx.org/kevengodet/hydrate/version)](https://packagist.org/packages/keven/hydrate)
+[![Latest Stable Version](https://poser.pugx.org/keven/hydrate/version)](https://packagist.org/packages/keven/hydrate)
 [![Build Status](https://travis-ci.org/kevengodet/hydrate.svg)](https://travis-ci.org/kevengodet/hydrate)
 [![License](https://poser.pugx.org/keven/hydrate/license)](https://packagist.org/packages/keven/hydrate)
 [![Total Downloads](https://poser.pugx.org/keven/hydrate/downloads)](https://packagist.org/packages/keven/hydrate)
