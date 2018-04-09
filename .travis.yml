@@ -10,3 +10,9 @@ php:
 install:
   - composer self-update
   - composer install
+matrix:
+  include:
+    - php: 5.3
+      dist: precise
+    - php: 5.4
+      dist: precise

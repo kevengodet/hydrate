@@ -15,6 +15,7 @@
         "files": [ "src/hydrate.php" ]
     },
     "require": {
-        "phpunit/phpunit": "^7.1"
+        "php": ">=5.3",
+        "phpunit/phpunit": ">=4"
     }
 }
