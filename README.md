@@ -3,7 +3,7 @@
 [![Latest Stable Version](https://poser.pugx.org/kevengodet/hydrate/v/stable)](https://packagist.org/packages/keven/hydrate)
 [![Build Status](https://travis-ci.org/kevengodet/hydrate.svg)](https://travis-ci.org/kevengodet/hydrate)
 [![License](https://poser.pugx.org/keven/hydrate/license)](https://packagist.org/packages/keven/hydrate)
-[![Total Downloads](https://poser.pugx.org/keven/hydrate/downloads)](https://packagist.org/packages/keven/hydrateHydrate an object from an array of properties.
+[![Total Downloads](https://poser.pugx.org/keven/hydrate/downloads)](https://packagist.org/packages/keven/hydrate)
 
 Hydrate an object from an array of properties.
 
